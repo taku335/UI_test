@@ -1,0 +1,18 @@
+{
+  "name": "ui-test-camera-mockup",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "lint": "tsc --noEmit",
+    "format": "prettier --write \"**/*.{html,css,ts,json,md,yml,yaml}\""
+  },
+  "devDependencies": {
+    "prettier": "3.8.3",
+    "typescript": "5.9.3",
+    "vite": "6.4.2"
+  }
+}
