@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">遠隔カメラ風の風景モック画像</title>
+  <desc id="desc">工場の敷地、山、空、監視カメラのHUD表現を含むサンプル風景。</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7bdcff"/>
+      <stop offset="0.45" stop-color="#c6f1ff"/>
+      <stop offset="1" stop-color="#f7e0a7"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#66745b"/>
+      <stop offset="1" stop-color="#1d2f27"/>
+    </linearGradient>
+    <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4d5960"/>
+      <stop offset="1" stop-color="#252d33"/>
+    </linearGradient>
+    <filter id="softNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.12"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#sky)"/>
+  <circle cx="1300" cy="170" r="86" fill="#fff4ba" opacity="0.9"/>
+  <g opacity="0.45" fill="#ffffff">
+    <ellipse cx="245" cy="180" rx="170" ry="34"/>
+    <ellipse cx="410" cy="200" rx="120" ry="28"/>
+    <ellipse cx="980" cy="120" rx="200" ry="38"/>
+  </g>
+
+  <path d="M0 500 L180 390 L330 465 L520 300 L735 505 L910 365 L1085 485 L1260 330 L1600 520 L1600 1000 L0 1000 Z" fill="#496878"/>
+  <path d="M0 555 L270 450 L515 545 L735 420 L1010 565 L1260 470 L1600 590 L1600 1000 L0 1000 Z" fill="#2f5560" opacity="0.86"/>
+  <path d="M0 660 C280 580 450 650 690 605 C900 565 1110 610 1600 560 L1600 1000 L0 1000 Z" fill="url(#ground)"/>
+
+  <g fill="#273a2f" opacity="0.92">
+    <path d="M70 655 l28 -70 l28 70z"/>
+    <path d="M122 676 l40 -105 l40 105z"/>
+    <path d="M1340 620 l36 -95 l36 95z"/>
+    <path d="M1415 655 l48 -130 l48 130z"/>
+    <path d="M1480 640 l32 -88 l32 88z"/>
+  </g>
+
+  <path d="M585 1000 L760 650 L850 650 L1065 1000 Z" fill="url(#road)"/>
+  <path d="M805 684 L840 1000" stroke="#f5d66f" stroke-width="14" stroke-dasharray="48 36" opacity="0.9"/>
+
+  <g transform="translate(250 595)">
+    <rect x="0" y="90" width="365" height="130" rx="10" fill="#8b948d"/>
+    <rect x="34" y="38" width="260" height="86" rx="8" fill="#a7b0aa"/>
+    <rect x="70" y="72" width="44" height="32" fill="#2d4650"/>
+    <rect x="140" y="72" width="44" height="32" fill="#2d4650"/>
+    <rect x="210" y="72" width="44" height="32" fill="#2d4650"/>
+    <rect x="26" y="128" width="310" height="18" fill="#65716c"/>
+    <rect x="292" y="-8" width="22" height="96" fill="#606b67"/>
+    <rect x="272" y="-30" width="62" height="28" rx="4" fill="#3a4444"/>
+    <circle cx="322" cy="-16" r="7" fill="#ff5f6d"/>
+  </g>
+
+  <g transform="translate(1045 600)">
+    <rect x="0" y="100" width="255" height="120" rx="8" fill="#7d8178"/>
+    <path d="M-20 105 L125 30 L275 105 Z" fill="#9b6f46"/>
+    <rect x="35" y="135" width="46" height="46" fill="#2f4654"/>
+    <rect x="105" y="135" width="46" height="46" fill="#2f4654"/>
+    <rect x="178" y="126" width="36" height="94" fill="#4b3a34"/>
+  </g>
+
+  <g opacity="0.72" stroke="#d9f9ff" stroke-width="3" fill="none">
+    <path d="M90 88 h140 v42"/>
+    <path d="M1510 88 h-140 v42"/>
+    <path d="M90 912 h140 v-42"/>
+    <path d="M1510 912 h-140 v-42"/>
+  </g>
+
+  <rect width="1600" height="1000" filter="url(#softNoise)" opacity="0.35"/>
+</svg>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="キーボード操作でカメラ視点を動かす画面操作UIのモックアップ"
+    />
+    <title>遠隔カメラ操作 UI モックアップ</title>
+  </head>
+  <body>
+    <main id="app" class="app-shell">
+      <section class="hero-panel" aria-labelledby="page-title">
+        <div class="title-block">
+          <p class="eyebrow">REMOTE FACTORY CAMERA / PROTOTYPE</p>
+          <h1 id="page-title">遠隔カメラ操作UI モックアップ</h1>
+          <p class="lead">
+            キーボードだけでカメラ映像の表示中心を移動し、Enterでズーム、Shift +
+            Enterでワイド表示に切り替えるプロトタイプ画面です。
+          </p>
+        </div>
+        <div class="system-badges" aria-label="システム状態">
+          <span>接続: モック</span>
+          <span>入力: キーボード</span>
+          <span>映像: サンプル</span>
+        </div>
+      </section>
+
+      <section class="control-layout" aria-label="カメラ操作エリア">
+        <aside
+          class="info-panel instructions"
+          aria-labelledby="instructions-title"
+        >
+          <p class="panel-kicker">操作説明</p>
+          <h2 id="instructions-title">キー割り当て</h2>
+          <dl class="key-list">
+            <div>
+              <dt>↑</dt>
+              <dd>表示中心を上に移動</dd>
+            </div>
+            <div>
+              <dt>↓</dt>
+              <dd>表示中心を下に移動</dd>
+            </div>
+            <div>
+              <dt>←</dt>
+              <dd>表示中心を左に移動</dd>
+            </div>
+            <div>
+              <dt>→</dt>
+              <dd>表示中心を右に移動</dd>
+            </div>
+            <div>
+              <dt>Enter</dt>
+              <dd>ズームイン</dd>
+            </div>
+            <div>
+              <dt>Shift + Enter</dt>
+              <dd>ワイド表示</dd>
+            </div>
+            <div>
+              <dt>Esc</dt>
+              <dd>初期位置に戻す</dd>
+            </div>
+          </dl>
+          <p class="hint">
+            カメラ接続は行わず、風景画像を動かして遠隔カメラの視点移動を再現しています。
+          </p>
+        </aside>
+
+        <section class="camera-card" aria-labelledby="camera-title">
+          <div class="camera-header">
+            <div>
+              <p class="panel-kicker">カメラ映像ウインドウ</p>
+              <h2 id="camera-title">中央監視カメラ A-07</h2>
+            </div>
+            <div class="recording-indicator" aria-label="モック録画状態">
+              <span></span>
+              LIVE MOCK
+            </div>
+          </div>
+
+          <div
+            class="viewport-frame"
+            tabindex="0"
+            aria-label="キーボードで操作できるカメラ映像"
+          >
+            <div class="viewport-grid" aria-hidden="true"></div>
+            <img
+              id="camera-image"
+              class="camera-image"
+              src="./mock-landscape.svg"
+              alt="工場敷地から見える山と空のサンプル風景"
+              draggable="false"
+            />
+            <div class="scanline" aria-hidden="true"></div>
+            <div class="crosshair" aria-hidden="true">
+              <span class="crosshair-horizontal"></span>
+              <span class="crosshair-vertical"></span>
+              <span class="crosshair-dot"></span>
+            </div>
+            <div class="viewport-label top-left">CAM A-07</div>
+            <div class="viewport-label top-right">PTZ MOCK</div>
+            <div class="viewport-label bottom-left">NO SIGNAL INPUT</div>
+            <div class="viewport-label bottom-right">KEYBOARD READY</div>
+          </div>
+        </section>
+
+        <aside class="info-panel status-panel" aria-labelledby="status-title">
+          <p class="panel-kicker">状態表示</p>
+          <h2 id="status-title">現在の視点</h2>
+          <div class="metric-list">
+            <div class="metric">
+              <span>倍率</span>
+              <strong id="zoom-status">100%</strong>
+            </div>
+            <div class="metric">
+              <span>中心 X</span>
+              <strong id="x-status">0</strong>
+            </div>
+            <div class="metric">
+              <span>中心 Y</span>
+              <strong id="y-status">0</strong>
+            </div>
+          </div>
+          <div class="position-map" aria-hidden="true">
+            <span id="position-dot"></span>
+          </div>
+          <p id="action-status" class="action-status" aria-live="polite">
+            操作待機中です。矢印キーまたは Enter を押してください。
+          </p>
+        </aside>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
