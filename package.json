@@ -11,8 +11,8 @@
     "format": "prettier --write \"**/*.{html,css,ts,json,md,yml,yaml}\""
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.5"
+    "prettier": "3.8.3",
+    "typescript": "5.9.3",
+    "vite": "6.4.2"
   }
 }
